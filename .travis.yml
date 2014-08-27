@@ -2,3 +2,10 @@ language: scala
 jdk: oraclejdk7
 scala:
    - 2.11.0
+deploy:
+  provider: releases
+  api-key: "p1BMkiVNFyznVgTqpDSW"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
