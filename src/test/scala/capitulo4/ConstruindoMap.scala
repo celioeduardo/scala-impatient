@@ -60,7 +60,7 @@ class ConstruindoMap extends FunSuite{
       scores.getOrElse("Bob",0)
     }
 	
-	assertResult(3){
+	assertResult(0){
       scores.getOrElse("Joe",0)
     }
   }
