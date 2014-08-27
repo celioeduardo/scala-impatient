@@ -1,4 +1,4 @@
-name := "hello"
+	name := "hello"
 
 version := "1.0.0-SNAPSHOT"
 
