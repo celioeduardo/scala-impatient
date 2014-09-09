@@ -2,6 +2,7 @@ package capitulo6
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.FunSuite
 
 class Account{
   val id = Account.newUniqueNumber()
@@ -15,6 +16,14 @@ object Account{
 }
 
 @RunWith(classOf[JUnitRunner])
-class ObjetoAcompanhante {
+class ObjetoAcompanhante extends FunSuite{
 	
+  test("duas contas obtendo valor de um Object Companion"){
+    val conta1 = new Account
+    val conta2 = new Account
+    
+    assert(1 == conta1.id)
+    assert(2 == conta2.id)
+  }
+  
 }
