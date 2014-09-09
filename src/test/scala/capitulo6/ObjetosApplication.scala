@@ -2,6 +2,7 @@ package capitulo6
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.FunSuite
 
 
 /**
@@ -27,6 +28,6 @@ object HelloB extends App{
 }
 
 @RunWith(classOf[JUnitRunner])
-class ObjetosApplication {
+class ObjetosApplication extends FunSuite{
 	
 }
