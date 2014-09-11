@@ -6,7 +6,18 @@ import org.scalatest.FunSuite
 
 /**
  * Packages Scala aninham como todos os outros escopos.
- * Podem ser acessados os nomes do escopo "enclosing"
+ * Podem ser acessados os nomes do escopo mais externo.
+ * 
+ * Nomes de packages em Java sempre são absolutas iniciando na
+ * raiz da hieraquia de packages. Em Scala nomes de packages
+ * são relativas como nomes de classes aninhadas. No caso
+ * de classes aninhadas isso geralmente não causa problema
+ * porque todo o código está em um arquivo. Mas packages são
+ * abertas-fechadas. Qualquer um pode contribuir para uma 
+ * package a qualquer momento
+ * 
+ * Para usar nomes de packages absolutas usa-se _root_, por exmplo:
+ * _root_.scala.collection.mutable.ArrayBuffer[Employee]
  */
 
 package com {
