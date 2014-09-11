@@ -18,7 +18,7 @@ object HelloA {
 /**
  * Ao invés de fornecer um método main, pode-se extender
  * a App trait e colocar o código do programa dentro do
- * construtor
+ * construtor da classe
  */
 object HelloB extends App{
  if (args.length > 0)
