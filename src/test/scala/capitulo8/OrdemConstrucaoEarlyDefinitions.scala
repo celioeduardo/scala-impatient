@@ -59,7 +59,7 @@ class OrdemConstrucaoEarlyDefinitions extends FunSuite{
   
   test("inicialização não intuitiva"){
     val ant = new Ant()
-    assert(ant.env.length == 0) //Inexperado
+    assert(ant.env.length == 0) //Inesperado
   }
   
   test("inicialização com early declaration"){
