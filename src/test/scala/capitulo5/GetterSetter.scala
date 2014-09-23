@@ -17,7 +17,7 @@ class Person2{
   
   def age = privateAge 
   def age_=(newValue: Int) {
-    if (newValue > privateAge) privateAge = newValue //Não pode ser mai jovem
+    if (newValue > privateAge) privateAge = newValue //Não pode ser mais jovem
   }
 }
 
