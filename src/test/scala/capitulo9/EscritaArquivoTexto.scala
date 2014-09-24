@@ -13,11 +13,10 @@ class EscritaArquivoTexto extends FunSuite{
   //Para escrever um arquivo texto use um java.io.PrintWriter
   test("escrita de arquivo texto"){
     val out = new PrintWriter("src/test/resources/numbers.txt")
-    for (i <- 1 to 10) out.println(i)
+    for (i <- 1 to 10) out.print(i+" ")
     out.close()
-    
     val source = Source.fromFile("src/test/resources/numbers.txt")
-    assert("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n" == source.mkString)
+    assert("1 2 3 4 5 6 7 8 9 10 " == source.mkString)
     source.close()
   }
   
@@ -31,7 +30,7 @@ class EscritaArquivoTexto extends FunSuite{
     
     out.printf("%6d %10.2f", 
     	quantity.asInstanceOf[AnyRef], price.asInstanceOf[AnyRef]) //Eca!!
-
+	
     //nesse caso é melhor usar o método format da classe String
     out.print("%6d %10.2f".format(quantity, price))
 
