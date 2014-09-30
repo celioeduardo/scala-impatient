@@ -4,6 +4,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import java.nio.file.Path
+import scala.collection.mutable.ArrayBuffer
 
 
 /**
@@ -29,9 +30,10 @@ class VisitarDiretorios extends FunSuite{
   
   test("visitando diretórios com iterator"){
     val dir = new File("src/test/resources/diretorio")
-    var s = ""
-    for (f <- subdirs(dir)) s += f.getName() + " "
-    assert("subdiretorioA subdiretorioB " == s)
+    var diretorios = new ArrayBuffer[String]
+    for (f <- subdirs(dir)) diretorios += f.getName()
+    assert(diretorios.contains("subdiretorioA"))
+    assert(diretorios.contains("subdiretorioB"))
   }
   
   // Alternativamente, se você estiver usando Java 7, 
