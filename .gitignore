@@ -18,4 +18,3 @@ project/plugins/project/
 .project
 .classpath
 /bin
-src/test/resources/serializacao/test.obj
