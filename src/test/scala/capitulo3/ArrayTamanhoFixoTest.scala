@@ -3,6 +3,7 @@ package capitulo3
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
+import scala.collection.mutable.WrappedArray
 
 @RunWith(classOf[JUnitRunner])
 class ArrayTamanhoFixoTest extends FunSuite {
@@ -27,6 +28,20 @@ class ArrayTamanhoFixoTest extends FunSuite {
     
     s(0) = "Goodbye"
     assert(s(0) == "Goodbye")
+  }
+  
+  test("Comparação de arrays"){
+    // *atenção*, não se pode comparar Arrays
+    // usando a forma básica com equals
+    assert(Array(0,1,2) != Array(0,1,2))
+    
+    // use forma alternativas
+    assert(Array(0,1,2).deep == Array(0,1,2).deep)
+    assert(Array(0,1,2).sameElements(Array(0,1,2)))
+    assert(Array(0,1,2).corresponds(Array(0,1,2)){_ == _})
+    
+    // casts
+    assert((Array(0,1,2):WrappedArray[Int]) == (Array(0,1,2):WrappedArray[Int]))
   }
   
 }

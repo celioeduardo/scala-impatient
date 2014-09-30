@@ -5,6 +5,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import java.nio.file.Path
 import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.LinkedHashSet
 
 
 /**
@@ -30,10 +31,9 @@ class VisitarDiretorios extends FunSuite{
   
   test("visitando diretórios com iterator"){
     val dir = new File("src/test/resources/diretorio")
-    var diretorios = new ArrayBuffer[String]
+    var diretorios = new LinkedHashSet[String]
     for (f <- subdirs(dir)) diretorios += f.getName()
-    assert(diretorios.contains("subdiretorioA"))
-    assert(diretorios.contains("subdiretorioB"))
+    assert(diretorios == LinkedHashSet("subdiretorioA","subdiretorioB"))
   }
   
   // Alternativamente, se você estiver usando Java 7, 

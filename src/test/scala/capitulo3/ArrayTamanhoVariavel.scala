@@ -4,6 +4,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.WrappedArray
 
 @RunWith(classOf[JUnitRunner])
 class ArrayTamanhoVariavel extends FunSuite {
