@@ -24,12 +24,18 @@ class ExpressoesRegularesGrupo extends FunSuite{
     
   }
   
-  test("extrair múltiplas correspondências de grupos"){
+  test("extrair múltiplas correspondências de grupos diferentes"){
     val numitemPattern = "([0-9]+) ([a-z]+)".r
     for (numitemPattern(num,item) <- numitemPattern.findAllIn("99 bottles, 98 bottles")){
       assert(num == "99" || num == "98")
       assert(item == "bottles")
     }
   }
+  
+  test("extrair múltiplas correspondências do mesmo grupo"){
+    val numitemPattern = "([0-9]+)+".r
+    val valores = numitemPattern.findAllIn("99 98,97 ").toArray
+    assert(Array("99","98","97").deep == valores.deep)
+  } 
   
 }
