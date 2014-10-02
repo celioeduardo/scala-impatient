@@ -20,9 +20,9 @@ class TraitsComImplementacaoConcreta extends FunSuite{
     
     // Exemplo de como usar essa trait
     class Account(var balance: Double)
-    // Em Scala (e em outras linguagens tha permitem isso)
+    // Em Scala (e em outras linguagens que permitem isso)
     // nós dizemos que a funcionalidade ConsoleLogger está
-    // mesclada ("mixed in") com a classe SavingAccounts 
+    // misturada ("mixed in") com a classe SavingAccounts 
     class SavingAccounts(_balance: Double) 
     	extends Account(_balance) with ConsoleLogger{
       
